@@ -1,30 +1,51 @@
-﻿using System.Collections.Generic;
+﻿// Copyright © 2017 Daniel Kraemer <dkraemer@dkross.org>
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using System.Collections.Generic;
 
 namespace DKrOSS.FizzBuzz
 {
-    public class FizzBuzz
+    public static class FizzBuzz
     {
-        public bool IsFizz(int number) => number % 3 == 0;
-        public bool IsBuzz(int number) => number % 5 == 0;
+        public static bool IsFizz(int number)
+        {
+            return number % 3 == 0;
+        }
 
-        public IReadOnlyList<string> GenerateList()
+        public static bool IsBuzz(int number)
+        {
+            return number % 5 == 0;
+        }
+
+        public static IReadOnlyList<string> GenerateList()
         {
             var list = new List<string>(100);
 
-            for (int i = 1; i <= 100; i++)
+            for (var i = 1; i <= 100; i++)
             {
                 string output = null;
 
-                if(IsFizz(i))
+                if (IsFizz(i))
                 {
                     output = "Fizz";
                 }
-                if(IsBuzz(i))
+                if (IsBuzz(i))
                 {
                     output += "Buzz";
                 }
 
-                if(output == null)
+                if (output == null)
                 {
                     output = i.ToString();
                 }
