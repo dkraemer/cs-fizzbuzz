@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace DKrOSS.FizzBuzz.Tests
@@ -72,40 +69,6 @@ namespace DKrOSS.FizzBuzz.Tests
             {
                 // Act
                 bool result = generator.IsBuzz(number);
-
-                // Assert
-                Assert.False(result);
-            }
-        }
-
-        [Fact]
-        public void IsFizzBuzz_ShouldReturn_TrueForMultiplesOfThreeAndFive()
-        {
-            // Arrange
-            var generator = new FizzBuzz();
-            var multiplesOfThreeAndFive = new[] { 15, 30, 45, 60, 75, 90 };
-
-            foreach (var number in multiplesOfThreeAndFive)
-            {
-                // Act
-                bool result = generator.IsFizzBuzz(number);
-
-                // Assert
-                Assert.True(result);
-            }
-        }
-
-        [Fact]
-        public void IsFizzBuzz_ShouldReturn_FalseForNotMultiplesOfThreeAndFive()
-        {
-            // Arrange
-            var generator = new FizzBuzz();
-            var notMultiplesOfThreeAndFive = new[] { 16, 31, 46, 61, 76, 91 };
-
-            foreach (var number in notMultiplesOfThreeAndFive)
-            {
-                // Act
-                bool result = generator.IsFizzBuzz(number);
 
                 // Assert
                 Assert.False(result);

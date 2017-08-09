@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Console;
 
 namespace DKrOSS.FizzBuzz.Console
 {
@@ -13,10 +9,10 @@ namespace DKrOSS.FizzBuzz.Console
             var fizzBuzz = new FizzBuzz();
             foreach (var item in fizzBuzz.GenerateList())
             {
-                System.Console.WriteLine(item);
+                WriteLine(item);
             }
 
-            return;
+            ReadKey();
         }
     }
 }

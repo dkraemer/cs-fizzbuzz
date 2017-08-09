@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DKrOSS.FizzBuzz
 {
@@ -7,7 +6,6 @@ namespace DKrOSS.FizzBuzz
     {
         public bool IsFizz(int number) => number % 3 == 0;
         public bool IsBuzz(int number) => number % 5 == 0;
-        public bool IsFizzBuzz(int number) => IsFizz(number) && IsBuzz(number);
 
         public IReadOnlyList<string> GenerateList()
         {
@@ -15,25 +13,23 @@ namespace DKrOSS.FizzBuzz
 
             for (int i = 1; i <= 100; i++)
             {
-                if(IsFizzBuzz(i))
-                {
-                    list.Add("FizzBuzz");
-                    continue;
-                }
-
-                if(IsBuzz(i))
-                {
-                    list.Add("Buzz");
-                    continue;
-                }
+                string output = null;
 
                 if(IsFizz(i))
                 {
-                    list.Add("Fizz");
-                    continue;
+                    output = "Fizz";
+                }
+                if(IsBuzz(i))
+                {
+                    output += "Buzz";
                 }
 
-                list.Add(i.ToString());
+                if(output == null)
+                {
+                    output = i.ToString();
+                }
+
+                list.Add(output);
             }
 
             return list;
